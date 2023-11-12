@@ -1,13 +1,6 @@
-import Button, { ButtonProps } from '@/components/ui/Button'
+import Button from '@/components/ui/Button'
 import Link from 'next/link'
-
-type SocialLinksProps = {
-  links: {
-    icon: ButtonProps['icon']
-    url: string
-    name: string
-  }[]
-}
+import { SocialLinksProps } from './types'
 
 const SocialLinks = ({ links }: SocialLinksProps) => {
   return (
