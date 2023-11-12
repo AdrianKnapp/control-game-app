@@ -16,7 +16,7 @@ export const Textarea: React.FC<TextareaProps> = ({
         </label>
       ) : null}
       <textarea
-        className="w-full rounded border border-slate-200 bg-white px-4 py-2 placeholder-slate-400 outline-none duration-default focus:border-teal-400 focus:ring-1 focus:ring-teal-400"
+        className="w-full rounded border border-slate-200 bg-white p-3 placeholder-slate-400 outline-none duration-default focus:border-teal-400 focus:ring-1 focus:ring-teal-400"
         name="subject"
         id="subject"
         cols={cols}

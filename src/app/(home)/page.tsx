@@ -32,10 +32,14 @@ const Home = () => {
           Entre em contato
         </p>
         <div className="flex flex-col gap-3 lg:flex-row lg:gap-5">
-          <Input id="name" label="Nome" />
-          <Input id="email" label="E-mail" />
+          <Input id="name" label="Nome" placeholder="Qual é o seu nome?" />
+          <Input id="email" label="E-mail" placeholder="Seu melhor e-mail" />
         </div>
-        <Textarea label="Assunto" id="subject" />
+        <Textarea
+          label="Assunto"
+          id="subject"
+          placeholder="Como podemos te ajudar?"
+        />
         <div className="mt-2">
           <Button>Enviar</Button>
         </div>
