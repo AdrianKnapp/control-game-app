@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '../app/(home)/styles.scss';
-
-@import '../components/common/SocialLinks/styles.scss';
-
-@import '../components/ui/Button/styles.scss';
-
 body {
   @apply bg-black-lightest;
 }

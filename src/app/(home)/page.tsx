@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 const Home = () => {
   return (
-    <div className="container">
-      <div className="header">
+    <div className="mx-auto flex w-full max-w-[600px] flex-col gap-10 px-5 pt-10">
+      <div className="flex w-full flex-col items-center">
         <picture>
           <Image src="/logo.svg" alt="Vercel Logo" width={150} height={150} />
         </picture>
