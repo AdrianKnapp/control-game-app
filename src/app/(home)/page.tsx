@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const Home = () => {
   return (
-    <div className="mx-auto flex w-full max-w-[600px] flex-col px-5 pb-5 pt-5 lg:pt-10">
+    <div className="mx-auto flex w-full max-w-[550px] flex-col px-5 pb-5 pt-5 lg:pt-10">
       <div className="flex w-full flex-col items-center">
         <Image src="/logo.svg" alt="Vercel Logo" width={150} height={150} />
         <h1 className="sr-only text-2xl font-semibold">App Control Game</h1>

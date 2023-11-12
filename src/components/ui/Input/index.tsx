@@ -11,7 +11,7 @@ export const Input: React.FC<InputProps> = ({ id, label, error, ...props }) => {
       <input
         id={id}
         name={id}
-        className="w-full rounded border border-slate-200 bg-white p-3 placeholder-slate-400 outline-none duration-default focus:border-teal-400 focus:ring-1 focus:ring-teal-400"
+        className="w-full rounded border border-slate-300 bg-white p-3 placeholder-slate-400 outline-none duration-default focus:border-teal-400 focus:ring-2 focus:ring-teal-400"
         type="text"
         {...props}
       />
