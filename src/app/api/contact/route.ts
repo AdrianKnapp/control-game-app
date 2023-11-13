@@ -27,7 +27,7 @@ const sendEmailToUs = async ({
 }: Contact, resend: Resend) => {
   const { error } = await resend.emails.send({
     from: 'contato@controlgameapp.com',
-    to: ['adrknapp@gmail.com', 'thugtroll8@gmail.com'],
+    to: ['adrknapp@gmail.com', 'willianmatheuscm@gmail.com'],
     subject: 'Contato',
     html: `<p>E-mail: ${email} <br /> Nome: ${name} <br /> Conteúdo: ${content} </p>`
   });
