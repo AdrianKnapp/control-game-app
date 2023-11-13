@@ -1,3 +1,4 @@
+import { ContactForm } from '@/components/common/ContactForm'
 import SocialLinks from '@/components/common/SocialLinks'
 import Button from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
@@ -27,23 +28,7 @@ const Home = () => {
           ]}
         />
       </div>
-      <div className="flex flex-col gap-3 rounded-xl bg-white p-5 lg:gap-5">
-        <p className="text-center text-lg font-semibold text-teal-700">
-          Entre em contato
-        </p>
-        <div className="flex flex-col gap-3 lg:flex-row lg:gap-5">
-          <Input id="name" label="Nome" placeholder="Qual é o seu nome?" />
-          <Input id="email" label="E-mail" placeholder="Seu melhor e-mail" />
-        </div>
-        <Textarea
-          label="Assunto"
-          id="subject"
-          placeholder="Como podemos te ajudar?"
-        />
-        <div className="mt-2">
-          <Button>Enviar</Button>
-        </div>
-      </div>
+      <ContactForm />
       <div className="mt-5 flex flex-col items-center justify-between gap-1 text-sm font-light text-gray-400 lg:flex-row">
         <p>Powered by Control Game App</p>
         <p>Política de Privacidade</p>
