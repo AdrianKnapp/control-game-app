@@ -7,6 +7,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useState } from 'react'
+import { PiBasketballDuotone } from 'react-icons/pi'
 
 type Inputs = {
   name: string
@@ -24,13 +25,22 @@ export const ContactForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    reset
   } = useForm<Inputs>({
     resolver: yupResolver(schema)
   })
   const [isEmailSent, setIsEmailSent] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleShowForm = () => {
+    reset()
+    setIsEmailSent(false)
+  }
 
   const onSubmit: SubmitHandler<Inputs> = async data => {
+    setIsLoading(true)
+
     try {
       await fetch('/api/contact', {
         method: 'POST',
@@ -41,17 +51,33 @@ export const ContactForm = () => {
         })
       })
 
-      console.log('success')
       setIsEmailSent(true)
     } catch (err) {
       console.log(err)
+    } finally {
+      setIsLoading(false)
     }
   }
 
   return (
     <section className="rounded-xl bg-white p-5">
       {isEmailSent ? (
-        <p>E-mail enviado com sucesso.</p>
+        <>
+          <div className="flex flex-col items-center gap-2">
+            <div className="flex items-center justify-center gap-2 text-teal-700">
+              <PiBasketballDuotone className="h-8 w-8" />
+              <p className="text-lg font-semibold">
+                E-mail enviado com sucesso.
+              </p>
+            </div>
+            <button
+              onClick={handleShowForm}
+              className="text-sm text-gray-500 hover:underline"
+            >
+              Envie outro e-mail
+            </button>
+          </div>
+        </>
       ) : (
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -83,7 +109,9 @@ export const ContactForm = () => {
             error={errors.content ? 'Campo inválido' : undefined}
           />
           <div className="mt-2">
-            <Button type="submit">Enviar</Button>
+            <Button type="submit" isLoading={isLoading}>
+              Enviar
+            </Button>
           </div>
         </form>
       )}

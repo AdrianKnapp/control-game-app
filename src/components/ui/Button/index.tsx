@@ -8,6 +8,7 @@ import {
 import { TbMessagePlus } from 'react-icons/tb'
 import { ButtonProps } from './types'
 import { buttonVariants } from './variance'
+import { Spin } from '../Spin'
 
 export const availableIcons = {
   linkedin: <LiaLinkedin />,
@@ -17,7 +18,13 @@ export const availableIcons = {
   email: <TbMessagePlus />
 }
 
-const Button = ({ children, icon, variant, ...props }: ButtonProps) => {
+const Button = ({
+  children,
+  icon,
+  variant,
+  isLoading,
+  ...props
+}: ButtonProps) => {
   return (
     <button
       className={buttonVariants({
@@ -33,6 +40,7 @@ const Button = ({ children, icon, variant, ...props }: ButtonProps) => {
         </div>
       ) : null}
       {children}
+      {isLoading ? <Spin /> : null}
     </button>
   )
 }

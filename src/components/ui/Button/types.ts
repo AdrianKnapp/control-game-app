@@ -8,4 +8,5 @@ export interface ButtonProps extends
   PropsWithChildren,
   VariantProps<typeof buttonVariants> {
   icon?: keyof typeof availableIcons
+  isLoading?: boolean
 }
